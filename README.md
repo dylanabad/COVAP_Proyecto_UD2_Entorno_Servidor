@@ -54,8 +54,7 @@ No se utilizan bases de datos, frameworks, clases, objetos ni JavaScript.
 | --------------------- | --------------------------------------------------------------------------------------------------------------- |
 | `index.php`           | Archivo principal. Muestra el formulario, recibe los datos enviados, procesa el pedido y presenta el resultado. |
 | `datos.php`           | Contiene el array asociativo con los productos, sus nombres y sus precios.                                      |
-| `funciones.php`       | Contiene las funciones para calcular el subtotal, el descuento y el total.                                      |
-| `cabecera.php`        | Contiene la estructura HTML inicial y la cabecera común de la página.                                           |
+| `funciones.php`       | Contiene las funciones para calcular el subtotal, el descuento y el total.                                      |                                       |
 | `README.md`           | Documentación del proyecto, instrucciones, pruebas y evidencias.                                                |
 | `retos/preguntas.md`  | Contiene las dos preguntas de examen propuestas por el equipo.                                                  |
 | `retos/soluciones.md` | Contiene las soluciones razonadas de las preguntas, con código completo y salida esperada.                      |
@@ -84,7 +83,6 @@ C:\xampp\htdocs\COVAP\
 ├── index.php
 ├── datos.php
 ├── funciones.php
-├── cabecera.php
 ├── README.md
 │
 └── retos\
@@ -113,7 +111,7 @@ También se puede acceder directamente al archivo principal mediante:
 
 `http://localhost/COVAP/index.php`
 
-El archivo `index.php` es el punto de entrada de la aplicación. Los archivos `datos.php`, `funciones.php` y `cabecera.php` se incorporan mediante instrucciones `include`.
+El archivo `index.php` es el punto de entrada de la aplicación. Los archivos `datos.php` y `funciones.php` se incorporan mediante instrucciones `include`.
 
 ### 5.4. Detener el servidor
 
@@ -141,12 +139,6 @@ include __DIR__ . "/datos.php";
 include __DIR__ . "/funciones.php";
 ```
 
-La cabecera HTML se incorpora mediante:
-
-```php
-<?php include __DIR__ . "/cabecera.php"; ?>
-```
-
 `__DIR__` permite construir las rutas a partir del directorio en el que se encuentra el archivo actual.
 
 **Nota:** la tabla describe la organización prevista del proyecto. Se debe comprobar que cada bloque mencionado esté presente en la versión definitiva del código. La validación completa de S7 debe verificarse antes de darla por terminada.
@@ -161,8 +153,7 @@ Se realizarán dos pruebas válidas y una prueba incorrecta. La columna de resul
 | ------------------ | ---------------------------------------------------------------------------- |
 | Entrada            | Producto: Leche COVAP. Cantidad: 3.                                          |
 | Resultado esperado | Precio unitario: 2,50 €. Subtotal: 7,50 €. Descuento: 0,00 €. Total: 7,50 €. |
-| Resultado obtenido | Pendiente de ejecutar y comprobar.                                           |
-| Estado             | Pendiente de verificación.                                                   |
+
 
 ### Prueba 2. Pedido válido con descuento
 
@@ -170,8 +161,7 @@ Se realizarán dos pruebas válidas y una prueba incorrecta. La columna de resul
 | ------------------ | ----------------------------------------------------------------------------- |
 | Entrada            | Producto: Leche COVAP. Cantidad: 4.                                           |
 | Resultado esperado | Precio unitario: 2,50 €. Subtotal: 10,00 €. Descuento: 0,50 €. Total: 9,50 €. |
-| Resultado obtenido | Pendiente de ejecutar y comprobar.                                            |
-| Estado             | Pendiente de verificación.                                                    |
+
 
 ### Prueba 3. Pedido incorrecto
 
@@ -179,8 +169,7 @@ Se realizarán dos pruebas válidas y una prueba incorrecta. La columna de resul
 | ------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | Entrada            | Cantidad: 6 unidades.                                                                                              |
 | Resultado esperado | La aplicación debe rechazar la cantidad y mostrar un mensaje de error, sin calcular ni presentar un pedido válido. |
-| Resultado obtenido | Pendiente de ejecutar y comprobar.                                                                                 |
-| Estado             | Pendiente de verificación.                                                                                         |
+
 
 **Importante:** para que la tercera prueba sea satisfactoria, el servidor debe validar la cantidad recibida. Los atributos `min` y `max` del formulario HTML no sustituyen la validación PHP. Si la versión actual no rechaza la cantidad 6, habrá que corregir el código antes de marcar la prueba como superada.
 
